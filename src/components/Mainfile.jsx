@@ -11,7 +11,7 @@ function Mainfile() {
       <button onClick={() => dispatch(fetchUsersRequest())}>Api</button>
       <ul>
         {users?.map((user) => {
-          return <li>{user.name}</li>;
+          return <li key={user.id}>{user.name}</li>;
         })}
       </ul>
     </div>
