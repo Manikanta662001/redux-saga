@@ -1,4 +1,4 @@
-import { call, takeLatest, put } from "redux-saga/effects";
+import { call, takeLatest, put, delay } from "redux-saga/effects";
 import {
   fetchUsersRequest,
   fetchUsersFailure,
@@ -13,6 +13,7 @@ const getallUsers = async () => {
 
 function* fetchUsers() {
   try {
+    yield delay(2000);
     const users = yield call(getallUsers);
     yield put(fetchUsersSuccess(users));
   } catch (error) {
