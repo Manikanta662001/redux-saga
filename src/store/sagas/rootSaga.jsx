@@ -20,6 +20,8 @@ function* fetchUsers() {
     yield put(fetchUsersFailure(error.message));
   }
 }
+
+//watcher saga it will watch for fetchUsersRequest is triggered
 function* rootSaga() {
   yield takeLatest(fetchUsersRequest, fetchUsers);
 }
